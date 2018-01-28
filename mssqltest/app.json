@@ -1,0 +1,28 @@
+{
+  "name": "mssqltest",
+  "description": "The admin microservice of mssqltest",
+  "website": "http://www.forestadmin.com/lumber",
+  "repository": "https://github.com/ForestAdmin/lumber",
+  "env": {
+    "FOREST_AUTH_SECRET": {
+      "description": "A random JWT signing secret to protect your admin API",
+      "value": "d9e82f7d250df2c9591c438c8d39c04984cf2b1b059ddd59bbe44c51dafbdd8ca47b87621e969a4aafa732176d7ead3a"
+    },
+    "FOREST_ENV_SECRET": {
+      "description": "The Forest environment secret",
+      "value": "4bdd4a33055df3f560dabdad571a2f5abb557f534651d0717de80471e71cae96"
+    },
+    "DATABASE_URL": {
+      "description": "The remote database connection URL",
+      "value": "mssql://<user>:<password>@<host>:<port>/<databaseName>"
+    },
+    "SSL_DATABASE": {
+      "description": "Specify if a SSL database connection is required.",
+      "value": "true"
+    },
+    "ENCRYPT_DATABASE": {
+      "description": "Specify if the database connection is encrypted.",
+      "value": "true"
+    }
+  }
+}

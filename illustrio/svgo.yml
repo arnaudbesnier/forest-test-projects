@@ -1,0 +1,58 @@
+# replace default config
+full: true
+js2svg:
+  pretty: true
+
+plugins:
+  - removeDoctypeForce
+  - cleanSvgTag
+    # - removeCdata
+  - removeGlyphs
+  - removeXMLProcInst
+  - removeXMLStylesheetProcInst
+  - removeComments
+  - removeMetadata
+  - removeEditorsNSData
+  - cleanupAttrs
+  - convertStyleToAttrs
+  # - removeRasterImages
+  # - cleanupNumericValues
+  - convertColors:
+      shorthex: false
+  - convertShortHexColors
+  # - removeUnknownsAndDefaults
+  # - removeNonInheritableGroupAttrs
+  # - removeUselessStrokeAndFill
+  # - removeViewBox
+  # - cleanupEnableBackground
+  - removeHiddenElems:
+      displayNone: true
+      opacity0: false
+      circleR0: false
+      ellipseRX0: false
+      ellipseRY0: false
+      rectWidth0: false
+      rectHeight0: false
+      patternWidth0: false
+      patternHeight0: false
+      imageWidth0: false
+      imageHeight0: false
+      pathEmptyD: false
+      polylineEmptyPoints: false
+      polygonEmptyPoints: false
+  - removeEmptyText
+  # - convertShapeToPath
+  - moveElemsAttrsToGroup
+  # - moveGroupAttrsToElems
+  # - collapseGroups
+  # - convertPathData
+  # - convertTransform
+  # - removeEmptyAttrs
+  # - removeEmptyContainers
+  # - mergePaths
+  # - cleanupIDs
+  - removeUnusedNS
+  # - transformsWithOnePath
+  # - sortAttrs
+  - removeTitle
+  # - removeDesc

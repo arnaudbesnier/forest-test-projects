@@ -1,0 +1,20 @@
+current directory: /Users/arnaudbesnier/Dev/project-rails-5/vendor/bundle/ruby/2.3.0/gems/oily_png-1.2.1/ext/oily_png
+/Users/arnaudbesnier/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20170201-23303-18rqmrt.rb extconf.rb
+creating Makefile
+
+current directory: /Users/arnaudbesnier/Dev/project-rails-5/vendor/bundle/ruby/2.3.0/gems/oily_png-1.2.1/ext/oily_png
+make "DESTDIR=" clean
+
+current directory: /Users/arnaudbesnier/Dev/project-rails-5/vendor/bundle/ruby/2.3.0/gems/oily_png-1.2.1/ext/oily_png
+make "DESTDIR="
+compiling color.c
+compiling oily_png_ext.c
+compiling operations.c
+compiling png_decoding.c
+compiling png_encoding.c
+compiling resampling.c
+linking shared-object oily_png/oily_png.bundle
+
+current directory: /Users/arnaudbesnier/Dev/project-rails-5/vendor/bundle/ruby/2.3.0/gems/oily_png-1.2.1/ext/oily_png
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 oily_png.bundle ./.gem.20170201-23303-1k9qeu7/oily_png

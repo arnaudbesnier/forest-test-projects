@@ -1,0 +1,5 @@
+Welcome!
+
+Activate your account by clicking here: <%= register_link %>
+
+PS: You have free download credits in your account waiting for you.

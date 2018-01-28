@@ -1,0 +1,105 @@
+have_library: checking for main() in -lstdc++... -------------------- yes
+
+"clang -o conftest -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0/x86_64-darwin15 -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0/ruby/backward -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include -I/opt/local/include -I/sw/include -I/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/include -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/arnaudbesnier/.rbenv/versions/2.3.0/lib -L/usr/local/lib -L/opt/local/lib -L/sw/lib -L/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/lib -L. -L/Users/arnaudbesnier/.rbenv/versions/2.3.0/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/sw/lib'
+ld: warning: directory not found for option '-L/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -o conftest -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0/x86_64-darwin15 -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0/ruby/backward -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include -I/opt/local/include -I/sw/include -I/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/include -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/arnaudbesnier/.rbenv/versions/2.3.0/lib -L/usr/local/lib -L/opt/local/lib -L/sw/lib -L/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/lib -L. -L/Users/arnaudbesnier/.rbenv/versions/2.3.0/lib  -fstack-protector -L/usr/local/lib     -lruby-static -framework CoreFoundation -lstdc++  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/sw/lib'
+ld: warning: directory not found for option '-L/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return !p; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -ltag... -------------------- no
+
+"clang -o conftest -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0/x86_64-darwin15 -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0/ruby/backward -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include -I/opt/local/include -I/sw/include -I/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/include -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/arnaudbesnier/.rbenv/versions/2.3.0/lib -L/usr/local/lib -L/opt/local/lib -L/sw/lib -L/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/lib -L. -L/Users/arnaudbesnier/.rbenv/versions/2.3.0/lib  -fstack-protector -L/usr/local/lib    -lstdc++  -lruby-static -framework CoreFoundation -ltag -lstdc++  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/sw/lib'
+ld: warning: directory not found for option '-L/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/lib'
+ld: library not found for -ltag
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0/x86_64-darwin15 -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0/ruby/backward -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include/ruby-2.3.0 -I. -I/usr/local/include -I/opt/local/include -I/sw/include -I/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/include -I/Users/arnaudbesnier/.rbenv/versions/2.3.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/arnaudbesnier/.rbenv/versions/2.3.0/lib -L/usr/local/lib -L/opt/local/lib -L/sw/lib -L/Users/arnaudbesnier/Dev/project-rails-5/vendor/taglib/lib -L. -L/Users/arnaudbesnier/.rbenv/versions/2.3.0/lib  -fstack-protector -L/usr/local/lib    -lstdc++  -lruby-static -framework CoreFoundation -ltag -lstdc++  -lpthread -ldl -lobjc "
+conftest.c:13:8: warning: return type of 'main' is not 'int' [-Wmain-return-type]
+extern void main();
+       ^
+conftest.c:13:8: note: change return type to 'int'
+extern void main();
+       ^~~~
+       int
+conftest.c:13:13: error: conflicting types for 'main'
+extern void main();
+            ^
+conftest.c:5:5: note: previous definition is here
+int main(int argc, char **argv)
+    ^
+conftest.c:14:20: error: too few arguments to function call, expected 2, have 0
+int t(void) { main(); return 0; }
+              ~~~~ ^
+conftest.c:5:1: note: 'main' declared here
+int main(int argc, char **argv)
+^
+1 warning and 2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void main();
+14: int t(void) { main(); return 0; }
+/* end */
+
+--------------------
+

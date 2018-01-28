@@ -1,0 +1,79 @@
+<% include ../templates/header.html %>
+
+<h1 style="color:#292B2A !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:24px;font-weight: normal;line-height:24px;border:none;text-decoration:none;margin: 35px 0 0;">Hi <%= name %>,</h1>
+<p style="color:#666666 !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;font-weight: normal;line-height:20px;border:none;text-decoration:none;margin: 10px 0 40px;">We've been carefully reviewing your latest submitted illustrations.<br/>Here's a summary:</p>
+
+<!-- Accepted illustrations -->
+<% if (accepted.length) { %>
+<table cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px solid #E5E5E5;margin: 0 0 40px;">
+  <thead>
+    <tr>
+      <th colspan="4" align="left" style="background: #61B43E;border: 1px solid #57A237;">
+        <strong style="color:#fff !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:11px;font-weight: bold;line-height:20px;border:none;text-decoration:none;text-transform: uppercase;margin: 10px 20px;">
+          Accepted (<%= accepted.length %>)
+        </strong>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i=0; i<accepted.length;i++) { %>
+    <tr>
+      <td width="20" align="left" style="border-left: 1px solid #E5E5E5;">&nbsp;</td>
+      <td align="left" valign="middle" style="border-bottom: 1px solid #E5E5E5;padding: 20px 0;">
+        <h2 style="color:#292B2A !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;font-weight: normal;line-height:16px;border:none;text-decoration:none;margin: 0 0 5px;">
+          <%= accepted[i].illustration.name %>
+        </h2>
+        <p style="color:#ACACAC !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;font-weight: normal;line-height:13px;border:none;text-decoration:none;margin: 0;">Series: <strong style="color: #3E4345 !important;">
+          <%= accepted[i].series.name %>
+        </strong></p>
+      </td>
+      <td width="100" align="right" valign="middle" style="border-bottom: 1px solid #E5E5E5;padding: 20px 0;">
+        <a href="https://beta.illustrio.com/designer/<%= _id %>/illustration/<%= accepted[i].illustration._id %>#logs" style="color:#6398C1 !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight: normal;line-height:24px;border:none;text-decoration:none;margin: 0;">View</a>
+      </td>
+      <td width="20" align="left" style="border-right: 1px solid #E5E5E5;">&nbsp;</td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+<% } %>
+<!-- Accepted illustrations -->
+
+<!-- Rejected illustrations -->
+<% if (rejected.length) { %>
+<table cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px solid #E5E5E5;margin: 0 0 40px;">
+  <thead>
+    <tr>
+      <th colspan="4" align="left" style="background: #E24D44;border: 1px solid #CA453D;">
+        <strong style="color:#fff !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:11px;font-weight: bold;line-height:20px;border:none;text-decoration:none;text-transform: uppercase;margin: 10px 20px;">
+          Rejected (<%= rejected.length %>)
+        </strong>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i=0; i<rejected.length; i++) { %>
+    <tr>
+      <td width="20" align="left" style="border-left: 1px solid #E5E5E5;">&nbsp;</td>
+      <td align="left" valign="middle" style="border-bottom: 1px solid #E5E5E5;padding: 20px 0;">
+        <h2 style="color:#292B2A !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;font-weight: normal;line-height:16px;border:none;text-decoration:none;margin: 0 0 5px;">
+          <%= rejected[i].illustration.name %>
+        </h2>
+        <p style="color:#ACACAC !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;font-weight: normal;line-height:13px;border:none;text-decoration:none;margin: 0;">Series: <strong style="color: #3E4345 !important;">
+          <%= rejected[i].series.name %>
+        </strong></p>
+      </td>
+      <td width="100" align="right" valign="middle" style="border-bottom: 1px solid #E5E5E5;padding: 20px 0;">
+        <a href="https://beta.illustrio.com/designer/<%= _id %>/illustration/<%= rejected[i].illustration._id %>#logs" style="color:#6398C1 !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight: normal;line-height:24px;border:none;text-decoration:none;margin: 0;">Read why</a>
+      </td>
+      <td width="20" align="left" style="border-right: 1px solid #E5E5E5;">&nbsp;</td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+<% } %>
+<!-- Rejected illustrations -->
+
+
+<a href="https://beta.illustrio.com/designer/illustrios" style="background: #6398C1;color:#fff !important;display:block;border:none;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;font-weight: normal;line-height:24px;border:none;text-align: center;text-decoration:none;margin: 0 0 40px;padding: 10px 0;">See all your moderation logs here</a>
+
+<% include ../templates/footer.html %>
